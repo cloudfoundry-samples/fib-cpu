@@ -7,8 +7,10 @@ class Fibonacci
       body = fibonacci(match.to_i).to_s
       puts "Request #{env['REQUEST_PATH']} took #{Time.now - now} seconds to complete"
       [200, {}, [body]]
+    elsif match = env['REQUEST_PATH'] =~ /^\/crash/
+      exit! 99
     else
-      [200, {}, ["Enter a number to calculate the fibonacci number for, ie. (/10 ==> 55)"]]
+      [200, {}, ["Enter a number to calculate the fibonacci number for, ie. (/10 ==> 55) or /crash to kill self"]]
     end
   end
 
