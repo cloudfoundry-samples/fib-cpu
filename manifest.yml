@@ -1,5 +1,5 @@
 ---
 applications:
 - name: fib
-  buildpack: https://github.com/cloudfoundry/heroku-buildpack-ruby.git
   command: rackup -p $PORT
+  memory: 128M
