@@ -1,3 +1,5 @@
+$stdout.sync = true
+$stderr.sync = true
 class Fibonacci
 
   def call(env)
